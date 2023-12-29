@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100%_not_scam.com</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #F8C8DC;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Nunito';
+            font-size: 50px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 200%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #FFCC32;
+            color: black;
+            border: 2px solid black;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #CCA328;
+        }
+    </style>
+    <script>
+        let noButtonCount = 0;
+        function moveNoButton() {
+            const noButton = document.getElementById('noButton');
+            if (noButtonCount === 0) {
+                noButton.style.transform = 'translate(500px, 150px)';
+            } else if (noButtonCount === 1) {
+                noButton.style.transform = 'translate(-300px, 100px)';
+            } else if (noButtonCount === 2) {
+                noButton.style.transform = 'translate(20px, 30px)';
+            } else if (noButtonCount === 3) {
+                noButton.style.transform = 'translate(-150px, -200px)';
+            } else if (noButtonCount === 4) {
+                noButton.style.transform = 'translate(300px, 50px)';
+            } else if (noButtonCount === 5) {
+                noButton.style.transform = 'translate(-400px, 200px)';
+            } else if (noButtonCount === 6) {
+                noButton.style.transform = 'translate(400px, -90px)';
+            } else if (noButtonCount === 7) {
+                noButton.style.transform = 'translate(0px, 0px)';
+            } else if (noButtonCount === 8) {
+                // Redirect to a new page
+                window.location.href = '/new-page';
+                return; // Stop further execution
+            } else {
+                document.forms[0].submit();
+            }
+            noButtonCount++;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="{{ url_for('static', filename='kot.gif') }}" alt="Пиво">
+        <h1>ПОЙДЕМ ПИТЬ ПИВО!</h1>
+    </div>
+
+    <form action="/response" method="post">
+        <button type="submit" name="answer" value="yes">Да</button>
+        <button type="button" id="noButton" onclick="moveNoButton()">Нет</button>
+    </form>
+</body>
+
+</html>
+
+

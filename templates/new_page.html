@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ответ</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #F8C8DC;
+            margin: 0;
+        }
+
+        .header_text {
+            font-family: 'Nunito';
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+
+        .gif_container {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 479px;
+            height: auto;
+            border: none;
+        }
+
+        .small_text {
+            font-family: 'Nunito';
+            font-size: 22px;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header_text">(wrong answer, try again)</div>
+    <div class="gif_container">
+        <img src="{{ url_for('static', filename='beer.gif') }}" alt="Пиво">
+    </div>
+<!--    <div class="small_text">(wrong answer, try again)</div>-->
+</body>
+
+</html>
